@@ -6,52 +6,35 @@
     <title>S.N</title>
     <link rel="stylesheet" href="style.css">
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const navbarToggle = document.getElementById('navbar-toggle');
-        const navbarMenu = document.getElementById('navbar-menu');
-
-        navbarToggle.addEventListener('click', () => {
-            navbarMenu.classList.toggle('show'); // إضافة أو إزالة الكلاس لإظهار أو إخفاء القائمة
-        });
-    });
-
-document.addEventListener("DOMContentLoaded", function () {
+   document.addEventListener("DOMContentLoaded", function () {
     const slider = document.querySelector('.slider');
     const projects = document.querySelectorAll('.project-card');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-    let visibleProjects = 3; // العرض الافتراضي للحواسيب المكتبية
     let currentIndex = 0;
-
     const totalProjects = projects.length;
 
-    // دالة لضبط عرض المشاريع بناءً على حجم الشاشة
     function updateVisibleProjects() {
         if (window.matchMedia("(max-width: 768px)").matches) {
-            visibleProjects = 1; // عرض مشروع واحد للموبايل
+            visibleProjects = 1;
         } else if (window.matchMedia("(max-width: 1024px)").matches) {
-            visibleProjects = 2; // عرض مشروعين للتابلت
+            visibleProjects = 2;
         } else {
-            visibleProjects = 3; // عرض ثلاثة مشاريع للحواسيب المكتبية
+            visibleProjects = 3;
         }
         
-        // ضبط عرض السلايدر ليتناسب مع عدد المشاريع
         slider.style.width = `${(100 * totalProjects) / visibleProjects}%`;
         showProjects(currentIndex);
     }
 
-    // دالة لضبط الموقع المرئي
     function showProjects(index) {
-        const offset = -(index * (90 / totalProjects));
+        const offset = -(index * (100 / totalProjects));
         slider.style.transition = 'transform 0.5s ease';
         slider.style.transform = `translateX(${offset}%)`;
-
-        // تفعيل أو تعطيل الأزرار حسب الموضع الحالي
         prevBtn.disabled = (currentIndex === 0);
         nextBtn.disabled = (currentIndex >= totalProjects - visibleProjects);
     }
 
-    // التنقل للأمام مع التحقق
     function nextProjects() {
         if (currentIndex < totalProjects - visibleProjects) {
             currentIndex++;
@@ -59,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // التنقل للخلف مع التحقق
     function prevProjects() {
         if (currentIndex > 0) {
             currentIndex--;
@@ -67,14 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // إضافة الأحداث على الأزرار
     nextBtn.addEventListener('click', nextProjects);
     prevBtn.addEventListener('click', prevProjects);
-
-    // تحديث عرض المشاريع عند تغيير حجم الشاشة
     window.addEventListener('resize', updateVisibleProjects);
-    
-    // استدعاء الدالة لضبط العرض بناءً على الحجم عند التحميل
     updateVisibleProjects();
 });
 
