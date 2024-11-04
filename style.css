@@ -206,8 +206,6 @@ body {
     margin: auto;
 }
 
-
-
 .slider-wrapper {
     overflow: hidden;
     width: 100%;
@@ -219,7 +217,7 @@ body {
 }
 
 .project-card {
-    /* flex: 1 0 20.33%; */
+    flex:1 0 calc(-0.67% - -1px);
     padding: 15px;
     text-align: center;
     border: 2px solid #e0e0e0;
@@ -227,8 +225,8 @@ body {
     background-color: #ffffff;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     margin: 0 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* إضافة حركة سلسة */
-    animation: fadeInUp 1.5s ease-in-out; /* حركة لظهور المشاريع */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1.5s ease-in-out;
 }
 
 @keyframes fadeInUp {
@@ -375,6 +373,8 @@ body {
     .project-gallery img {
         max-width: 95%;
     }
+    .project-card {
+        flex: 1 0 calc(12% - 20px)    }
 }
 @media (max-width: 768px) {
     .navbar-menu {
@@ -403,6 +403,9 @@ body {
     .navbar-toggle {
         display: block; /* عرض زر القائمة */
     }
+    .project-card {
+        flex: 1 0 calc(6% - 0px);
+    }
 }
 
 @media (max-width: 488px) {
@@ -410,5 +413,8 @@ body {
         max-width: 82%;
         border-radius: 10px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);}
+        .project-card {
+            flex: 1 0 calc(13% - 20px);
+        }
 
 }
