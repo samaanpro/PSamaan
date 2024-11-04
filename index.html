@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // دالة لضبط الموقع المرئي
     function showProjects(index) {
-        const offset = -(index * (100 / totalProjects));
+        const offset = -(index * (90 / totalProjects));
         slider.style.transition = 'transform 0.5s ease';
         slider.style.transform = `translateX(${offset}%)`;
 
