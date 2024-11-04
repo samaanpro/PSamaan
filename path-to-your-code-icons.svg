@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+  <!-- تعريف التدرج اللوني المائل -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="10%" style="stop-color:#4A90E2; stop-opacity:0.2" /> <!-- لون أزرق بشفافية عالية -->
+      <stop offset="100%" style="stop-color:#8E44AD; stop-opacity:0.2" /> <!-- لون بنفسجي بشفافية عالية -->
+    </linearGradient>
+  </defs>
+
+  <!-- رمز المتغير -->
+  <text x="10" y="10" font-size="20" fill="url(#gradient)" transform="rotate(-15 10,20)">let</text>
+  <text x="60" y="10" font-size="20" fill="url(#gradient)" transform="rotate(-15 70,20)">const</text>
+
+  <!-- رمز دالة -->
+  <text x="10" y="60" font-size="20" fill="url(#gradient)" transform="rotate(-15 10,60)">function()</text>
+
+  <text x="10" y="80" font-size="20" fill="url(#gradient)" transform="rotate(-15 10,60)">samaan()</text>
+
+  <!-- رمز HTML -->
+  <text x="10" y="100" font-size="20" fill="url(#gradient)" transform="rotate(-15 10,100)">&lt;div&gt;</text>
+  <text x="70" y="100" font-size="20" fill="url(#gradient)" transform="rotate(-15 70,100)">&lt;/div&gt;</text>
+
+  <!-- رمز قاعدة بيانات -->
+  <text x="10" y="140" font-size="20" fill="url(#gradient)" transform="rotate(-15 10,140)">SELECT *</text>
+</svg>

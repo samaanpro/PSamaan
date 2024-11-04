@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+  <!-- رمز المتغير -->
+  <text x="10" y="20" font-size="20" fill="#4A4A4A">let</text>
+  <text x="70" y="20" font-size="20" fill="#4A4A4A">const</text>
+
+  <!-- رمز دالة -->
+  <text x="10" y="60" font-size="20" fill="#4A4A4A">function()</text>
+
+  <!-- رمز HTML -->
+  <text x="10" y="100" font-size="20" fill="#4A4A4A">&lt;div&gt;</text>
+  <text x="70" y="100" font-size="20" fill="#4A4A4A">&lt;/div&gt;</text>
+
+  <!-- رمز قاعدة بيانات -->
+  <text x="10" y="140" font-size="20" fill="#4A4A4A">SELECT *</text>
+</svg>

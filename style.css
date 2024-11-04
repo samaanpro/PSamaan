@@ -1,0 +1,414 @@
+:root {
+    --primary-color: #6244C5;
+    --secondary-color: #FFC448;
+    --text-color: #343a40;
+    --bg-color: #fffffff5;
+    --font-family: "Open Sans", sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: url('path-to-your-code-icons.svg'); /* ضع مسار SVG هنا */
+  background-size: 130px 130px; /* حجم النمط */
+  background-repeat: repeat;
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+}
+
+/* قسم الهيدر */
+.header {
+    position: relative;
+    background-image: url('background1.jpg');
+    background-size: cover;
+    color: #fff;
+    padding: 0 20px;
+    min-height: 70vh;
+    overflow: hidden;
+    animation: slideIn 1.5s ease-out; /* حركة للظهور من الأعلى */
+
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.navbar {
+    padding: 15px 0;
+    width: 100%; /* جعل الناف بار بعرض كامل الصفحة */
+}
+
+.logo {
+    color: white;
+    font-size: 35px;
+    margin-right: auto;
+    font-family: cursive;
+}
+
+.navbar-toggle {
+    display: none; /* إخفاء زر القائمة بشكل افتراضي */
+    background-color: #6244c5;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-menu li {
+    margin: 0 20px;
+}
+
+.navbar-menu a {
+    color: white; /* لون النص */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar-menu a:hover {
+    text-decoration: underline;
+}
+
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 13 18 / 65%);
+    pointer-events: none;
+}
+
+/* إضافة أنماط التفاعل للناف بار في وضع التابلت والموبايل */
+/* إضافة أنماط التفاعل للناف بار في وضع التابلت والموبايل */
+
+
+.role {
+    font-size: 24px; /* حجم النص */
+    color: #ffffff; /* لون النص */
+    white-space: nowrap; /* منع التفاف النص */
+    overflow: hidden; /* إخفاء النص الزائد */
+    border-right: 2px solid; /* لمحاكاة تأثير الكتابة */
+    width: 100%; /* عرض البداية */
+    animation: typing 4s steps(30, end), blink-caret 0.75s step-start infinite; /* إضافة تأثير الكتابة والوميض */
+}
+
+        @keyframes typing {
+            from {
+                width: 0; 
+            }
+            to {
+                width: 100%; /* النهاية عند عرض كامل النص */
+            }
+          
+
+
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent; /* إخفاء المؤشر */
+            }
+            50% {
+                border-color: rgb(0, 247, 255); /* عرض المؤشر */
+            }
+        }
+
+        @keyframes deleting {
+            from {
+                width: 0%; /* البداية من عرض كامل النص */
+            }
+            to {
+                width: 0%; 
+            }
+        }
+.container {
+    position: relative; /* لجعل العناصر داخل الحاوية فوق الطبقة الداكنة */
+    display: flex; /* استخدام flexbox لترتيب المحتوى */
+    flex-wrap: wrap; /* للسماح بتدفق العناصر عند تغيير الحجم */
+    justify-content: space-between; /* توزيع العناصر بالتساوي */
+    align-items: center; /* توسيط العناصر عمودياً */
+    height: 100%; /* تعيين ارتفاع الحاوية ليكون بنفس ارتفاع الهيدر */
+    text-align: center; /* توسيط النص */
+}
+.container2 {
+    position: relative; /* لجعل العناصر داخل الحاوية فوق الطبقة الداكنة */
+    display: flex; /* استخدام flexbox لترتيب المحتوى */
+    flex-wrap: wrap; /* للسماح بتدفق العناصر عند تغيير الحجم */
+    justify-content: space-between; /* توزيع العناصر بالتساوي */
+    align-items: center; /* توسيط العناصر عمودياً */
+    height: 100%; /* تعيين ارتفاع الحاوية ليكون بنفس ارتفاع الهيدر */
+    text-align: center; /* توسيط النص */
+}
+.text-section {
+    max-width: 500px;
+    padding: 20px;
+    color: #fff;
+}
+
+.text-section h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.text-section .name {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.text-section .role {
+    font-size: 1.5rem;
+}
+
+.image-section {
+    margin-left: 20px;
+}
+
+.image-section img {
+    max-width: 390px;
+    filter: drop-shadow(0px 17px 28px #44448B);
+}
+
+.btn-download {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* قسم المشاريع */
+.projects {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.project-gallery {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+}
+
+
+
+.slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.project-card {
+    /* flex: 1 0 20.33%; */
+    padding: 15px;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* إضافة حركة سلسة */
+    animation: fadeInUp 1.5s ease-in-out; /* حركة لظهور المشاريع */
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* تأثير هوفر على بطاقات المشروع */
+.project-card:hover {
+    transform: scale(1.002); /* تكبير بسيط عند التمرير */
+    box-shadow: 0px 8px 16px rgba(38, 21, 78, 0.349); /* تحسين الظل عند التمرير */
+}
+
+.project-card img {
+    width: 100%;
+    height: 210px;  
+      margin-bottom: 10px;
+      border-radius: 3px;
+      box-shadow: 0px 8px 16px rgba(38, 21, 78, 0.349); /* تحسين الظل عند التمرير */
+
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.visit-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.status-tag {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* جعل الزر شبه شفاف */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10; /* إعطاء الزر قيمة z-index أعلى ليبقى فوق السلايدر */
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* قسم المهارات */
+.skills {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-item {
+    width: 150px;
+    text-align: center;
+}
+
+.skill-item img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+/* قسم التواصل */
+.contact {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact form input, .contact form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact form button {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 870px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .text-section,
+    .image-section {
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    .project-gallery {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .project-gallery img {
+        max-width: 95%;
+    }
+}
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* إخفاء القائمة بشكل افتراضي */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        height: 231px;
+        left: 0;
+        background-color: #0e163fd9;
+        z-index: 1000;
+        border-radius: 9px
+    }
+
+    .navbar-menu.show {
+        display: flex; 
+        justify-content: space-evenly;
+    }
+    .navbar-menu li {
+        margin: 0 20px;
+        background: #0e364d99;
+        padding: 9px;
+        border-radius: 3px;}
+
+    .navbar-toggle {
+        display: block; /* عرض زر القائمة */
+    }
+}
+
+@media (max-width: 488px) {
+    .image-section img {
+        max-width: 82%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);}
+
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.N</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navbarToggle = document.getElementById('navbar-toggle');
+        const navbarMenu = document.getElementById('navbar-menu');
+
+        navbarToggle.addEventListener('click', () => {
+            navbarMenu.classList.toggle('show'); // إضافة أو إزالة الكلاس لإظهار أو إخفاء القائمة
+        });
+    });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector('.slider');
+    const projects = document.querySelectorAll('.project-card');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let visibleProjects = 3; // العرض الافتراضي للحواسيب المكتبية
+    let currentIndex = 0;
+
+    const totalProjects = projects.length;
+
+    // دالة لضبط عرض المشاريع بناءً على حجم الشاشة
+    function updateVisibleProjects() {
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            visibleProjects = 1; // عرض مشروع واحد للموبايل
+        } else if (window.matchMedia("(max-width: 1024px)").matches) {
+            visibleProjects = 2; // عرض مشروعين للتابلت
+        } else {
+            visibleProjects = 3; // عرض ثلاثة مشاريع للحواسيب المكتبية
+        }
+        
+        // ضبط عرض السلايدر ليتناسب مع عدد المشاريع
+        slider.style.width = `${(100 * totalProjects) / visibleProjects}%`;
+        showProjects(currentIndex);
+    }
+
+    // دالة لضبط الموقع المرئي
+    function showProjects(index) {
+        const offset = -(index * (100 / totalProjects));
+        slider.style.transition = 'transform 0.5s ease';
+        slider.style.transform = `translateX(${offset}%)`;
+
+        // تفعيل أو تعطيل الأزرار حسب الموضع الحالي
+        prevBtn.disabled = (currentIndex === 0);
+        nextBtn.disabled = (currentIndex >= totalProjects - visibleProjects);
+    }
+
+    // التنقل للأمام مع التحقق
+    function nextProjects() {
+        if (currentIndex < totalProjects - visibleProjects) {
+            currentIndex++;
+            showProjects(currentIndex);
+        }
+    }
+
+    // التنقل للخلف مع التحقق
+    function prevProjects() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            showProjects(currentIndex);
+        }
+    }
+
+    // إضافة الأحداث على الأزرار
+    nextBtn.addEventListener('click', nextProjects);
+    prevBtn.addEventListener('click', prevProjects);
+
+    // تحديث عرض المشاريع عند تغيير حجم الشاشة
+    window.addEventListener('resize', updateVisibleProjects);
+    
+    // استدعاء الدالة لضبط العرض بناءً على الحجم عند التحميل
+    updateVisibleProjects();
+});
+
+
+    </script>
+    
+</head>
+<body>
+
+    <!-- قسم الهيدر -->
+    <header class="header">
+        <div class="dark-overlay"></div>
+
+        <nav class="navbar">
+            <div class="container2">
+                <div class="logo">Samaan</div>
+                <button class="navbar-toggle" id="navbar-toggle">☰</button>
+                <ul class="navbar-menu" id="navbar-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    
+        <div class="container">
+            <div class="text-section">
+                <h1 class="intro">I'm</h1>
+                <h2 class="name">Samaan Nady</h2>
+                <p class="role">Web Designer & Developer</p>
+                <button class="btn-download">Download CV</button>
+            </div>
+            <div class="image-section">
+                <img src="background.png" alt="Profile Photo">
+            </div>
+        </div>
+    </header>
+    
+    <!-- قسم المشاريع -->
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="project-gallery">
+            <button class="prev-btn">❮</button>
+            <div class="slider-wrapper">
+            <div class="slider">
+                <!-- كرر المشاريع داخل السلايدر -->
+                <div class="project-card">
+                    <img src="imgp/1.PNG" alt="Project Icon">
+                    <h3>PfpFinder1</h3>
+                    <p>Find the best profile pictures and banners for all your social media accounts.</p>
+                    <a href="#" class="visit-btn">Visit</a>
+                </div>
+                <div class="project-card">
+                    <img src="imgp/2.PNG" alt="Project Icon">
+                    <h3>BikeKart2</h3>
+                    <p>BikeKart is a bike store template with multiple sections.</p>
+                    <a href="#" class="visit-btn">Visit</a>
+                </div>
+                <div class="project-card">
+                    <img src="imgp/3.PNG" alt="Project Icon">
+                    <h3>SimplCalc3</h3>
+                    <p>Tired of calculating manually? SimplCalc is a faster solution.</p>
+                    <span class="status-tag">In Progress</span>
+                </div>
+                <div class="project-card">
+                    <img src="imgp/4.PNG" alt="Project Icon">
+                    <h3>SimplCalc4</h3>
+                    <p>Tired of calculating manually? SimplCalc is a faster solution.</p>
+                    <span class="status-tag">In Progress</span>
+                </div>
+                <!-- تكرار المشاريع لعمل تأثير اللانهائية -->
+                <div class="project-card">
+                    <img src="imgp/5.PNG" alt="Project Icon">
+                    <h3>BikeKart5</h3>
+                    <p>BikeKart is a bike store template with multiple sections.</p>
+                    <a href="#" class="visit-btn">Visit</a>
+                </div>
+                <div class="project-card">
+                    <img src="imgp/6.PNG" alt="Project Icon">
+                    <h3>SimplCalc6</h3>
+                    <p>Tired of calculating manually? SimplCalc is a faster solution.</p>
+                    <span class="status-tag">In Progress</span>
+                </div>
+                <div class="project-card">
+                    <img src="imgp/7.PNG" alt="Project Icon">
+                    <h3>SimplCalc7</h3>
+                    <p>Tired of calculating manually? SimplCalc is a faster solution.</p>
+                    <span class="status-tag">In Progress</span>
+                </div>
+            </div>
+
+            </div>
+            <button class="next-btn">❯</button>
+        </div>
+    </section>
+    
+    
+
+    <!-- قسم المهارات -->
+    <section class="skills">
+        <h2>My Skills</h2>
+        <div class="skills-list">
+       
+        </div>
+    </section>
+
+    <!-- قسم التواصل -->
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="social-links">
+            <a href="https://linkedin.com" target="_blank">
+                <img src="linkedin-logo.png" alt="LinkedIn">
+            </a>
+        </div>
+    </section>
+
+    <script src="script.js">
+    
+
+    </script>
+</body>
+</html>
